@@ -330,58 +330,46 @@
   #services { background: var(--dark); }
 
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2px;
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .service-card {
-    background: var(--dark2);
-    padding: 36px 28px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    border-bottom: 2px solid transparent;
-  }
-  .service-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-  .service-card:hover {
-    border-bottom-color: var(--gold);
-    transform: translateY(-4px);
-  }
-  .service-card:hover::before { opacity: 1; }
-
-  .service-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: var(--gold-dark);
-    margin-bottom: 20px;
-  }
-  .service-icon {
-    font-size: 32px;
-    margin-bottom: 16px;
     display: block;
+    padding: 0;
+    border: none;
   }
+  .service-card::before { content: none; }
+  .service-card:hover .service-name { color: var(--white); }
+
+  .service-num { display: none; }
+  .service-icon { display: none; }
   .service-name {
+    display: inline;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: var(--white);
-    margin-bottom: 8px;
+    margin-bottom: 0;
     text-transform: uppercase;
   }
+  .service-name::before {
+    content: '•';
+    color: var(--gold);
+    margin-right: 10px;
+  }
   .service-desc {
-    font-size: 13px;
+    display: inline;
+    font-size: 14px;
     color: var(--gray);
     line-height: 1.6;
+  }
+  .service-desc::before {
+    content: ' - ';
+    color: var(--gold-dark);
   }
 
   /* ICAR CERTIFIED */
@@ -815,4 +803,8 @@
     .nav-cta .btn-outline { display: none; }
     .finance-logo-placeholder { flex-direction: column; align-items: flex-start; }
     .finance-logo-image { height: auto; max-width: 100%; }
+    .services-grid { margin-top: 44px; }
+    .service-card { padding: 0; }
+    .service-name { font-size: 18px; }
+    .service-desc { font-size: 13px; }
   }

@@ -33,10 +33,3 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
-
-  // Stagger service cards
-  document.querySelectorAll('.service-card').forEach((card, i) => {
-    card.style.transitionDelay = (i * 0.05) + 's';
-    card.classList.add('reveal');
-    observer.observe(card);
-  });

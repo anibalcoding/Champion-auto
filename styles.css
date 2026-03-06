@@ -67,6 +67,13 @@
   .nav-logo {
     display: flex; align-items: center; gap: 14px;
   }
+  .nav-logo img {
+    width: 84px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
   .nav-logo .icon {
     width: 42px; height: 42px;
     background: var(--gold);
@@ -593,6 +600,12 @@
     font-size: 14px;
   }
   .finance-features li strong { color: var(--white); }
+  .finance-apply-btn {
+    margin-top: 28px;
+    font-size: 12px;
+    padding: 12px 24px;
+    width: fit-content;
+  }
 
   /* CONTACT */
   #contact {
@@ -787,24 +800,265 @@
     transform: translateY(0);
   }
 
+  @media (max-width: 1024px) {
+    nav { padding: 0 4%; }
+    .nav-links { gap: 20px; }
+    .hero-content { padding-top: 88px; }
+    .hero-title { font-size: clamp(60px, 11vw, 104px); }
+    .hero-stats { gap: 28px; }
+    section { padding: 84px 5%; }
+    .certified-inner,
+    .contact-wrap { gap: 52px; }
+    .finance-card,
+    .contact-cta-box { padding: 36px 30px; }
+    .contact-item { padding: 22px; }
+  }
+
   /* MOBILE */
   @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero-tow { position: static; margin-top: 32px; }
-    .hero-stats { gap: 28px; }
-    .certified-inner,
-    .financing-grid,
-    .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
-    .cert-badge-wrap { order: -1; }
-    .cert-badge { width: 220px; height: 220px; }
-    .cert-icar { font-size: 40px; }
-    footer .footer-inner { flex-direction: column; text-align: center; }
-    .footer-cert { text-align: center; }
+    body { cursor: auto; }
+    .cursor,
+    .cursor-ring { display: none; }
+
+    nav {
+      height: auto;
+      min-height: 72px;
+      padding: 10px 4%;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .nav-logo { gap: 10px; }
+    .nav-logo img {
+      width: 62px;
+      height: 44px;
+    }
+    .nav-logo-text { display: block; }
+    .nav-logo-text .sub {
+      font-size: 10px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .nav-links {
+      order: 3;
+      width: 100%;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 1.4px;
+    }
+    .nav-cta { margin-left: auto; }
     .nav-cta .btn-outline { display: none; }
-    .finance-logo-placeholder { flex-direction: column; align-items: flex-start; }
-    .finance-logo-image { height: auto; max-width: 100%; }
-    .services-grid { margin-top: 44px; }
-    .service-card { padding: 0; }
+    .nav-cta .btn-gold {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 10px 14px;
+    }
+
+    #hero { min-height: auto; }
+    .hero-content {
+      padding-top: 124px;
+      padding-bottom: 56px;
+    }
+    .hero-badge {
+      font-size: 10px;
+      letter-spacing: 2px;
+      padding: 6px 12px;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: clamp(52px, 16vw, 74px);
+      letter-spacing: 2px;
+      line-height: 0.92;
+    }
+    .hero-tagline {
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 36px;
+    }
+    .hero-actions .btn-gold,
+    .hero-actions .btn-outline {
+      width: 100%;
+      justify-content: center;
+      padding: 12px 16px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 20px;
+    }
+    .stat-num { font-size: 36px; }
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+    .hero-tow {
+      position: static;
+      margin-top: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+    .scroll-indicator { display: none; }
+
+    section { padding: 72px 5%; }
+    .section-title { letter-spacing: 2px; }
+    .section-sub { font-size: 14px; }
+
+    .tow-banner {
+      padding: 20px 5%;
+      justify-content: flex-start;
+      gap: 14px;
+    }
+    .tow-banner-icon { font-size: 24px; }
+    .tow-banner-text {
+      font-size: clamp(18px, 6vw, 26px);
+      letter-spacing: 2px;
+    }
+    .tow-banner-sub {
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+    .tow-banner a {
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .services-grid {
+      margin-top: 44px;
+      gap: 8px;
+    }
     .service-name { font-size: 18px; }
     .service-desc { font-size: 13px; }
+
+    #certified::before { display: none; }
+    .certified-inner,
+    .financing-grid,
+    .contact-wrap {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .cert-badge-wrap { order: -1; }
+    .cert-badge {
+      width: 220px;
+      height: 220px;
+    }
+    .cert-icar { font-size: 40px; }
+
+    .finance-card { padding: 30px 24px; }
+    .finance-logo-placeholder {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .finance-logo-image {
+      height: auto;
+      max-width: 100%;
+    }
+    .finance-logo-image.aff-logo {
+      width: 130px;
+      height: 56px;
+    }
+    .finance-brand { font-size: 24px; }
+    .finance-apply-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .contact-wrap { margin-top: 40px; }
+    .contact-info { gap: 20px; }
+    .contact-item {
+      padding: 20px;
+      gap: 14px;
+    }
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+    .contact-item-value { font-size: 18px; }
+    .contact-cta-box { padding: 30px 24px; }
+    .cta-headline { letter-spacing: 2px; }
+    .cta-buttons { gap: 10px; }
+    .cta-btn-main,
+    .cta-btn-spanish {
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 14px 16px;
+    }
+    .cta-btn-main .ph,
+    .cta-btn-spanish .flag { font-size: 18px; }
+
+    footer { padding: 36px 5% 24px; }
+    footer .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 14px;
+    }
+    .footer-brand {
+      font-size: 16px;
+      letter-spacing: 3px;
+    }
+    .footer-cert {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 8px 4%; }
+    .nav-logo img {
+      width: 54px;
+      height: 39px;
+    }
+    .nav-cta .btn-gold {
+      font-size: 10px;
+      letter-spacing: 1px;
+      gap: 4px;
+      padding: 8px 10px;
+    }
+    .nav-logo-text .sub {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+    }
+    .hero-content { padding-top: 116px; }
+    .hero-title { font-size: clamp(44px, 15vw, 58px); }
+    .hero-badge {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+    .hero-stats { grid-template-columns: 1fr; }
+    .section-tag {
+      font-size: 10px;
+      letter-spacing: 3px;
+      gap: 8px;
+    }
+    .section-tag::before { width: 20px; }
+    .section-title { font-size: clamp(32px, 11vw, 42px); }
+    .service-name { font-size: 16px; }
+    .service-desc { font-size: 12px; }
+    .finance-card { padding: 24px 18px; }
+    .finance-brand {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .finance-brand-sub {
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+    .contact-item-value { font-size: 16px; }
+    .cta-btn-main,
+    .cta-btn-spanish { font-size: 12px; }
   }

@@ -786,6 +786,28 @@
   .cta-btn-spanish:hover { background: rgba(201,168,76,0.08); }
   .cta-btn-spanish .flag { font-size: 18px; }
 
+  /* SALES COMING SOON */
+  #sales-coming {
+    background: var(--dark);
+    padding: 38px 5%;
+  }
+  .sales-coming-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid rgba(201,168,76,0.26);
+    background: rgba(201,168,76,0.06);
+    text-align: center;
+    padding: 14px 20px;
+  }
+  .sales-coming-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(18px, 2.4vw, 28px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
   /* FOOTER */
   footer {
     background: #050505;
@@ -1076,6 +1098,12 @@
     }
     .cta-btn-main .ph,
     .cta-btn-spanish .flag { font-size: 18px; }
+    #sales-coming { padding: 30px 5%; }
+    .sales-coming-box { padding: 12px 14px; }
+    .sales-coming-text {
+      letter-spacing: 1.5px;
+      font-size: clamp(16px, 5vw, 22px);
+    }
 
     footer { padding: 36px 5% 24px; }
     footer .footer-inner {
@@ -1136,6 +1164,10 @@
       font-size: clamp(18px, 7vw, 24px);
     }
     .about-text { font-size: 13px; }
+    .sales-coming-text {
+      font-size: clamp(14px, 5.6vw, 18px);
+      letter-spacing: 1px;
+    }
     .services-insurance-note {
       font-size: 12px;
       line-height: 1.4;
